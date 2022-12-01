@@ -45,7 +45,7 @@ function ShowTestDetail({data}) {
       </div>
 
       </div>
-      <button onClick={()=>navigate(-1)} className="p-4 rounded-full bg-gray-200 shadow-xl text-center text-gray-800 right-2 bottom-2 fixed border border-gray-300/50">Go Back</button>
+      <button onClick={()=>navigate('/')} className="p-4 rounded-full bg-gray-200 shadow-xl text-center text-gray-800 right-2 bottom-2 fixed border border-gray-300/50">Go Back</button>
       </section>
   )
     }

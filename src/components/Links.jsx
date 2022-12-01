@@ -45,12 +45,12 @@ function Links({ data, categories }) {
                           </div>{" "} */}
                         </div>
 
-                        <h1 className="text-xl font-bold text-left capitalize text-gray-600 mt-3">
+                        <h1 className="text-xl font-bold text-left capitalize text-gray-600 mt-2">
                           {" "}
                           {handlePrice(dish.precio)}
                         </h1>
 
-                        <p className="text-left text-gray-500 mt-2 text-sm max-w-prose">
+                        <p className="text-left text-gray-500 mt-2 text-sm max-w-prose font-normal">
                           {" "}
                           {dish.descripcion.substring(0, 30)}...
                         </p>

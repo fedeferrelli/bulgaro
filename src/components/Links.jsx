@@ -9,7 +9,7 @@ function Links({ data, categories }) {
     <div className="py-4 flex flex-col gap-4">
       {categories?.map((categoria) => (
         <section className="w-11/12 rounded-lg border py-3 px-2 border-gray-400/20 shadow-lg  m-auto bg-white">
-          <h1 className="text-2xl text-center capitalize font-bold text-gray-600">
+          <h1 className="text-3xl text-center capitalize font-bold text-gray-600">
             {categoria}
           </h1>
 
@@ -39,10 +39,10 @@ function Links({ data, categories }) {
                           {dish.plato}
                         </h1>
                         <div className="flex justify-left">
-                          <div className="rounded-full bg-gray-200 w-auto text-gray-400 px-2 py-1 text-xs">
+                          {/* <div className="rounded-full bg-gray-200 w-auto text-gray-400 px-2 py-1 text-xs">
                             {" "}
                             {dish.categoria}{" "}
-                          </div>{" "}
+                          </div>{" "} */}
                         </div>
 
                         <h1 className="text-xl font-bold text-left capitalize text-gray-600 mt-3">

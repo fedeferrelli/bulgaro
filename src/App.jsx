@@ -31,7 +31,7 @@ useEffect(() => {
 
 console.log(categories)
   return (
-    <div className="">
+    <div className="bg-slate-700">
 <Router>
             <Routes>
               <Route path="/" element={<Links data={data} categories={categories} />} />

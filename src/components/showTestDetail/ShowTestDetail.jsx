@@ -25,7 +25,7 @@ function ShowTestDetail({data}) {
 
 
     return (
-      <section className="pb-4">
+      <section className="pb-4 bg-white">
 
 
       <div className="w-full ">

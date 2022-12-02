@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 
-import {AiOutlineArrowUp} from 'react-icons/ai'
+import { AiOutlineArrowUp } from "react-icons/ai";
 
 import Loading from "./Loading";
 
-function Links({ data, categories }) {
+function Links({ data, categories, setSearch }) {
   const [categoriesToShow, setCategoriesToShow] = useState();
   const [showLoading, setShowLoading] = useState(true);
+  
   useEffect(() => {
     const setCat = () => {
       const catInData = data.map((dish) => dish.categoria);
@@ -32,8 +33,8 @@ function Links({ data, categories }) {
       <Loading />
     </>
   ) : (
-    <div className="py-4 pb-20 flex flex-col gap-4 bg-slate-700 px-1">
-      <div id="search">
+    <div className="py-4 pb-20 flex flex-col gap-4 bg-slate-700 px-1 w-full">
+    <div id="search">
         <input
           className="sm:w-40 w-full focus:w-full p-2 px-3 rounded-full my-4 ease-in-out duration-700 outline-none
                 border-gray-100 border bg-white text-gray-700 font-extralight"
@@ -42,7 +43,7 @@ function Links({ data, categories }) {
           placeholder="Buscar"
         />
       </div>
-
+ 
       <section className="w-full flex flex-wrap justify-evenly sm:justify-start mt-2 mb-6 gap-2 sm:gap-6">
         {categoriesToShow?.map((cat) => {
           return (
@@ -129,8 +130,10 @@ function Links({ data, categories }) {
         offset={-10}
         duration={500}
       >
-        <span className="w-full m-auto rounded-full p-2 text-4xl font-bold"> <AiOutlineArrowUp/> </span>
-        
+        <span className="w-full m-auto rounded-full p-4 text-2xl text-gray-700">
+          {" "}
+          <AiOutlineArrowUp />{" "}
+        </span>
       </LinkScroll>
     </div>
   );

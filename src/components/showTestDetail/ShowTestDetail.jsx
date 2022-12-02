@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import {useNavigate, useParams} from 'react-router-dom'
 
+import Loading from "../Loading";
 
 function ShowTestDetail({data}) {
 
   const { dish } = useParams();
   const [selectedDish, setSelectedDish] = useState([]);
-
+const [showLoading, setShowLoading] = useState(true)
   useEffect(() => {
     
     const setDish = () => {
       setSelectedDish(data.find(plato=>plato.plato===dish));
+      setShowLoading(false)
     };
     typeof data !== "undefined" && setDish();
   }, [data]);
@@ -25,13 +27,15 @@ function ShowTestDetail({data}) {
 
 
     return (
-      <section className="pb-4 bg-white">
+
+      showLoading ? <><Loading/></> :
+      <section className="pb-4 bg-white min-h-screen w-full">
 
 
       <div className="w-full ">
       
       <div className="">
-      <img className="" src={selectedDish?.image}
+      <img className="" src={selectedDish?.image} loading="lazy"
         alt={`imagen para ${selectedDish?.title}`} ></img> </div>    
       <div className="p-2 w-full">  
       <h1 className="text-2xl text-left capitalize font-semibold text-gray-600"> {selectedDish.plato}</h1>
@@ -45,48 +49,11 @@ function ShowTestDetail({data}) {
       </div>
 
       </div>
-      <button onClick={()=>navigate('/')} className="px-4 py-3 rounded-full bg-gray-200 shadow-xl text-center text-gray-800 right-2 bottom-2 fixed border border-gray-300/80">Volver al Menú</button>
+      <button onClick={()=>navigate('/')} className="px-4 py-3 rounded-full bg-gray-200 shadow-xl text-center text-gray-700 right-2 bottom-2 fixed border border-gray-300/80">Volver al Menú</button>
       </section>
   )
     }
   
   
-  /* import { useState, useEffect } from "react";
-
-import { useParams } from "react-router-dom";
-
-import Client from "./Client";
-import TesterNumber from "./TesterNumber";
-import Video from "./Video";
-import Transcription from "./Transcription";
-import Tasks from "./Tasks";
-
-function ShowTestDetail({data}) {
-
-  const { dish } = useParams();
-  const [dataToShow, setDataToShow] = useState([]);
-
-  useEffect(() => {
-    
-    const setDish = () => {
-    setDataToShow(data.find(plato=>plato.plato===dish));
-    };
-    typeof data !== "undefined" && setDish();
-  }, [data]);
-
-  console.log(dish)
-
-console.log(dataToShow)
- 
- return (
-    <div>
-   {dataToShow && 
- 
-    <div>{dataToShow?.plato} </div>}
-  </div>
-);
-
-}
-*/
 export default ShowTestDetail;
  

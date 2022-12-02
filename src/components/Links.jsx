@@ -44,6 +44,7 @@ function Links({ data, categories }) {
                       <div className="p-1 sm:p-0 w-2/5 min-w-[100px] h-auto sm:w-auto sm:rounded-none order-2 flex relative">
                         <img
                           className="sm:m-auto w-full h-auto border border-gray-400/20 sm:border-none sm:w-auto rounded-lg sm:rounded-none m-auto"
+                          loading="lazy"
                           src={dish?.image}
                           alt={`imagen para ${dish?.title}`}
                         ></img>

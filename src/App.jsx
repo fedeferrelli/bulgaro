@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-slate-700 bg-white min-h-screen flex">
+    <div className="bg-white min-h-screen flex">
       <Router>
         <Routes>
           <Route

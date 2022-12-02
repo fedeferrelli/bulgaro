@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 
+import {AiOutlineArrowUp} from 'react-icons/ai'
+
 import Loading from "./Loading";
 
 function Links({ data, categories }) {
@@ -119,7 +121,7 @@ function Links({ data, categories }) {
         </section>
       ))}
       <LinkScroll
-        className=" w-10 h-10 px-4 py-3 rounded-full bg-gray-200 shadow-xl text-center text-gray-700 right-3 bottom-3 fixed border border-gray-300/80"
+        className="rounded-full bg-gray-200 shadow-xl text-center text-gray-700 right-3 bottom-3 fixed border border-gray-300/80 flex"
         activeClass="active"
         to="search"
         spy={true}
@@ -127,7 +129,8 @@ function Links({ data, categories }) {
         offset={-10}
         duration={500}
       >
-        I
+        <span className="w-full m-auto rounded-full p-2 text-4xl font-bold"> <AiOutlineArrowUp/> </span>
+        
       </LinkScroll>
     </div>
   );

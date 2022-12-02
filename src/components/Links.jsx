@@ -29,9 +29,9 @@ function Links({ data, categories }) {
       <Loading />
     </>
   ) : (
-    <div className="py-4 flex flex-col gap-4">
+    <div className="py-4 flex flex-col gap-4 bg-slate-700 px-1">
       {categoriesToShow?.map((categoria) => (
-        <section className="w-11/12 rounded-lg border py-3 px-2 border-gray-400/20 shadow-lg  m-auto bg-white">
+        <section className="w-full rounded-lg border py-3 px-2 border-gray-400/20 shadow-lg  m-auto bg-white">
           <h1 className="text-4xl text-center capitalize font-bold text-gray-600">
             {categoria}
           </h1>

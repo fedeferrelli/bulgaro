@@ -1,13 +1,31 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Links({ data, categories }) {
+
+  const [categoriesToShow, setCategoriesToShow] = useState();
+
+  useEffect(() => {
+    const setCat = () =>{
+      const catInData = data.map(dish=>dish.categoria)
+      //console.log(catInData)
+      const cat = []
+      categories.map(category=> catInData.includes(category) && cat.push(category) )
+      console.log(cat)
+      setCategoriesToShow(cat)
+    };
+
+    categories && data && setCat();
+  }, [data, categories])
+
+
   const handlePrice = (string) => {
     return "$" + Number(string).toLocaleString("de-DE");
   };
 
   return (
     <div className="py-4 flex flex-col gap-4">
-      {categories?.map((categoria) => (
+      {categoriesToShow?.map((categoria) => (
         <section className="w-11/12 rounded-lg border py-3 px-2 border-gray-400/20 shadow-lg  m-auto bg-white">
           <h1 className="text-4xl text-center capitalize font-bold text-gray-600">
             {categoria}

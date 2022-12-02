@@ -50,7 +50,7 @@ function Links({ data, categories }) {
               spy={true}
               smooth={true}
               offset={-10}
-              duration={500}
+              duration={1000}
               className="px-3 py-2 shadow text-gray-600 rounded-full bg-slate-200 text-sm scroll-smooth"
             >
               {cat}

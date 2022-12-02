@@ -29,7 +29,7 @@ function Links({ data, categories }) {
       <Loading />
     </>
   ) : (
-    <div className="py-4 flex flex-col gap-4 bg-slate-700 px-1">
+    <div className="py-4 pb-20 flex flex-col gap-4 bg-slate-700 px-1">
       {categoriesToShow?.map((categoria) => (
         <section className="w-full rounded-lg border py-3 px-2 border-gray-400/20 shadow-lg  m-auto bg-white">
           <h1 className="text-4xl text-center capitalize font-bold text-gray-600">
@@ -86,6 +86,8 @@ function Links({ data, categories }) {
           </ul>
         </section>
       ))}
+      <button onClick={()=>navigate('/')} className=" w-10 h-10 px-4 py-3 rounded-full bg-gray-200 shadow-xl text-center text-gray-700 right-3 bottom-3 fixed border border-gray-300/80">I</button>
+
     </div>
   );
 }

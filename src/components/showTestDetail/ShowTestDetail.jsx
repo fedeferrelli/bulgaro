@@ -49,7 +49,7 @@ const [showLoading, setShowLoading] = useState(true)
       </div>
 
       </div>
-      <button onClick={()=>navigate('/')} className="px-4 py-3 rounded-full bg-gray-200 shadow-xl text-center text-gray-700 right-2 bottom-2 fixed border border-gray-300/80">Volver al Menú</button>
+      <button onClick={()=>navigate('/')} className="px-4 py-3 rounded-full bg-gray-200 shadow-xl text-center text-gray-700 right-3 bottom-3 fixed border border-gray-300/80">Volver al Menú</button>
       </section>
   )
     }

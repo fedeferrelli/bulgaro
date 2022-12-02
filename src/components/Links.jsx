@@ -1,29 +1,34 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import Loading from "./Loading";
+
 function Links({ data, categories }) {
-
   const [categoriesToShow, setCategoriesToShow] = useState();
-
+  const [showLoading, setShowLoading] = useState(true);
   useEffect(() => {
-    const setCat = () =>{
-      const catInData = data.map(dish=>dish.categoria)
-      //console.log(catInData)
-      const cat = []
-      categories.map(category=> catInData.includes(category) && cat.push(category) )
-      console.log(cat)
-      setCategoriesToShow(cat)
+    const setCat = () => {
+      const catInData = data.map((dish) => dish.categoria);
+      const cat = [];
+      categories.map(
+        (category) => catInData.includes(category) && cat.push(category)
+      );
+      setCategoriesToShow(cat);
+      setShowLoading(false);
     };
 
     categories && data && setCat();
-  }, [data, categories])
-
+  }, [data, categories]);
 
   const handlePrice = (string) => {
     return "$" + Number(string).toLocaleString("de-DE");
   };
 
-  return (
+  return showLoading ? (
+    <>
+      <Loading />
+    </>
+  ) : (
     <div className="py-4 flex flex-col gap-4">
       {categoriesToShow?.map((categoria) => (
         <section className="w-11/12 rounded-lg border py-3 px-2 border-gray-400/20 shadow-lg  m-auto bg-white">
@@ -48,21 +53,13 @@ function Links({ data, categories }) {
                           src={dish?.image}
                           alt={`imagen para ${dish?.title}`}
                         ></img>
-                        {/* {showDescriptionOnBigScreens ? 
-          <span className="absolute flex top-0 bottom-0 right-0 left-0 bg-gray-800/80 overflow-auto"><p className="m-auto max-w-prose text-center text-gray-200 px-2 ">{dish.descripcion}</p></span>
-          : null } */}
                       </div>
                       <div className="p-2 w-full sm:order-2">
                         <h1 className="text-2xl text-left capitalize font-semibold text-gray-600">
                           {" "}
                           {dish.plato}
                         </h1>
-                        <div className="flex justify-left">
-                          {/* <div className="rounded-full bg-gray-200 w-auto text-gray-400 px-2 py-1 text-xs">
-                            {" "}
-                            {dish.categoria}{" "}
-                          </div>{" "} */}
-                        </div>
+                        <div className="flex justify-left"></div>
 
                         <h1 className="text-xl font-bold text-left capitalize text-gray-600 mt-2">
                           {" "}

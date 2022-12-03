@@ -4,7 +4,7 @@ import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 import { fetchData } from "./api";
 
-import Links from "./components/Links";
+import Links from "./components/Links/Links";
 import ShowTestDetail from "./components/showTestDetail/ShowTestDetail";
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-white min-h-screen flex">
+    <div className="bg-white sm:bg-slate-700 min-h-screen flex">
       <Router>
         <Routes>
           <Route

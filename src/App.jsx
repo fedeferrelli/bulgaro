@@ -65,7 +65,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-white sm:bg-main min-h-screen flex flex-col relative">
+    <div className="bg-white sm:bg-main min-h-screen flex flex-col justify-center">
       <section>
         <Router>
           <Routes>

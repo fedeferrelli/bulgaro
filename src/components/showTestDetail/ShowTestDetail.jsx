@@ -10,7 +10,7 @@ function ShowTestDetail({ data }) {
 
   useEffect(() => {
     const setDish = () => {
-      setSelectedDish(data.find((plato) => plato.plato === dish));
+      setSelectedDish(data.find((plato) => plato.id === dish));
       setShowLoading(false);
     };
     typeof data !== "undefined" && setDish();
@@ -38,7 +38,7 @@ function ShowTestDetail({ data }) {
           ></img>{" "}
         </div>
         <div className="p-2 w-full">
-          <h1 className="text-2xl text-left capitalize font-semibold text-gray-600">
+          <h1 className="text-2xl text-left capitalize font-semibold text-text">
             {" "}
             {selectedDish.plato}
           </h1>
@@ -49,12 +49,12 @@ function ShowTestDetail({ data }) {
             </div>{" "}
           </div>
 
-          <h1 className="text-2xl font-bold text-left capitalize text-gray-600 mt-3">
+          <h1 className="text-2xl font-bold text-left capitalize text-text mt-3">
             {" "}
             {handlePrice(selectedDish.precio)}
           </h1>
 
-          <p className="text-left text-gray-500 mt-2 text-md max-w-prose">
+          <p className="text-left text-description mt-2 text-md max-w-prose">
             {" "}
             {selectedDish.descripcion}
           </p>
@@ -62,7 +62,7 @@ function ShowTestDetail({ data }) {
       </div>
       <button
         onClick={() => navigate("/")}
-        className="px-4 py-3 rounded-full bg-gray-200 shadow-xl text-center text-gray-700 right-3 bottom-3 fixed border border-gray-300/80"
+        className="px-4 py-3 rounded-full bg-alt_bg shadow-xl text-center text-text right-3 bottom-3 fixed border border-gray-300/80"
       >
         Volver al Menú
       </button>

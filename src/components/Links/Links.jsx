@@ -39,7 +39,7 @@ function Links({ data, categories }) {
       <Loading />
     </>
   ) : (
-    <div className="py-4 pb-20 flex flex-col gap-4 bg-slate-700 max-w-[1200px] m-auto px-1 w-full min-h-screen">
+    <div className="py-4 pb-20 flex flex-col gap-4 bg-main max-w-[1200px] m-auto px-1 w-full min-h-screen">
       <Search setSearch={setSearch} />
 
       <Categories categories={categoriesToShow} />

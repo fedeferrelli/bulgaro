@@ -11,18 +11,20 @@ function ShowItems({ categoria, dataToShow }) {
 
   return (
     <section
-      className="w-full rounded-lg border py-3 px-2 border-gray-400/20 shadow-lg  mx-auto bg-white sm:bg-slate-200"
+      className="w-full rounded-lg border py-3 px-2 border-gray-400/20 shadow-lg  mx-auto bg-white sm:bg-alt_bg"
       id={`${categoria}`}
     >
-      <h1 className="text-4xl text-center sm:text-left capitalize font-bold text-gray-600">
+      <h1 className="text-4xl text-center sm:text-left capitalize font-bold text-text">
         {categoria}
       </h1>
 
       <ul className="mt-4 font-bold text-xl sm:w-full sm:flex sm:flex-row sm:flex-wrap sm:gap-10 sm:justify-evenly">
         {dataToShow
-          ?.filter((dish) => dish.categoria === categoria)
+          ?.filter((dish) => dish.categoria === categoria).sort((a, b) => {
+            return +a.ubicacion > +b.ubicacion ? 1 : -1;
+          })
           .map((dish, i) => (
-            <li key={dish.descripcion} className="mt-2">
+            <li key={dish.id} className="mt-2">
               {viewport_width < 650 ? (
                 <LinkMobile dish={dish} handlePrice={handlePrice} />
               ) : (

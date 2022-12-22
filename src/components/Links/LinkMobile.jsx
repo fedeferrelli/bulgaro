@@ -1,48 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function LinkMobile({dish, handlePrice}) {
+function LinkMobile({ dish, handlePrice }) {
   return (
     <div>
       <Link
         className="hover:text-secondary/80 duration-300"
-        to={`/${dish.plato}`}
+        to={`/${dish.id}`}
       >
-        <div className="w-full sm:w-[250px] sm:h-[420px]  sm:bg-gray-100 rounded-md sm:rounded-b-none sm:shadow-xl sm:hover:shadow-gray-900 sm:hover:shadow-lg sm:border sm:border-gray-700/25 ease-in-out duration-500 cursor-pointer overflow-hidden relative flex sm:flex-col">
+        <div className="w-full rounded-md overflow-hidden relative flex">
           <div className="p-1 sm:p-0 w-2/5 min-w-[100px] h-auto sm:w-auto sm:rounded-none order-2 flex relative">
             <img
-              className="sm:m-auto w-full h-auto border border-gray-400/20 sm:border-none sm:w-auto rounded-lg sm:rounded-none m-auto"
+              className="w-full h-auto border border-gray-400/20rounded-lg m-auto"
               loading="lazy"
               src={dish?.image}
               alt={`imagen para ${dish?.title}`}
             ></img>
           </div>
-          <div className="p-2 w-full sm:order-2">
-            <h1 className="text-2xl text-left capitalize font-semibold text-gray-600">
+          <div className="p-2 w-full">
+            <h1 className="text-2xl text-left capitalize font-semibold text-text">
               {" "}
               {dish.plato}
             </h1>
             <div className="flex justify-left"></div>
 
-            <h1 className="text-xl font-bold text-left capitalize text-gray-600 mt-2">
+            <h1 className="text-xl font-bold text-left capitalize text-text mt-2">
               {" "}
               {handlePrice(dish.precio)}
             </h1>
 
-            <p className="text-left text-gray-500 mt-2 text-sm max-w-prose font-normal">
+            <p className="text-left text-description mt-2 text-sm max-w-prose font-normal">
               {" "}
-              {dish.descripcion.substring(0, 30)} {dish.descripcion.length > 30 ? '...' : null}
+              {dish.descripcion.substring(0, 30)}{" "}
+              {dish.descripcion.length > 30 ? "..." : null}
             </p>
-            {dish.existencia === "no" && (
-              <div className="absolute top-0 left-0 bottom-0 right-0 bg-gray-800/25 flex ">
-                <div className="w-48 p-2 m-auto rounded-full  bg-gray-100/50 text-gray-800 text-center rotate-0">
-                  Sin Stock
-                </div>
-              </div>
-            )}
           </div>
         </div>
-        <hr className="my-2 sm:hidden" />
+        <hr className="my-2" />
       </Link>
     </div>
   );

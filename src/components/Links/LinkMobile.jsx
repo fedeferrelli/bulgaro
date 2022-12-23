@@ -11,7 +11,7 @@ function LinkMobile({ dish, handlePrice }) {
         <div className="w-full rounded-md overflow-hidden relative flex">
           <div className="p-1 sm:p-0 w-2/5 min-w-[100px] h-auto sm:w-auto sm:rounded-none order-2 flex relative">
             <img
-              className="w-full h-auto border border-gray-400/20rounded-lg m-auto"
+              className="w-full h-auto border border-gray-400/20 rounded-lg m-auto"
               loading="lazy"
               src={dish?.image}
               alt={`imagen para ${dish?.title}`}

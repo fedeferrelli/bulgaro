@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react";
-import { onSnapshot, collection} from "firebase/firestore";
-//import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
-import { db } from "./firebase/firebase";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { fetchData } from "./api";
-
-
 
 import Links from "./components/Links/Links";
 import ShowTestDetail from "./components/showTestDetail/ShowTestDetail";
@@ -13,35 +8,6 @@ import ShowTestDetail from "./components/showTestDetail/ShowTestDetail";
 function App() {
   const [data, setData] = useState();
   const [categories, setCategories] = useState();
-
-  /* const getData = () => {
-    onSnapshot(collection(db, "platos"), (querySnapshot) => {
-      let cities = [];
-      querySnapshot.forEach((doc) => {
-        cities.push(doc.data());
-      });
-
-      setData(cities);
-    });
-  };
-
-  const getCategories = () => {
-    onSnapshot(collection(db, "categorias"), (querySnapshot) => {
-      let cats = [];
-      querySnapshot.forEach((doc) => {
-        cats.push(doc.data());
-      });
-
-      setCategories(
-        cats
-          .sort((a, b) => {
-            return +a.posicion > +b.posicion ? 1 : -1;
-          })
-          .map((cat) => cat.nueva_categoria)
-      );
-    });
-  }; */
-
 
   const getData = async () => {
     const dataApi = await fetchData.fetchMenuData();

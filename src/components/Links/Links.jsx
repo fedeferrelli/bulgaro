@@ -46,7 +46,7 @@ function Links({ data, categories }) {
 
       {categoriesToShow?.map((categoria) => (
         <div key={categoria}>
-        <ShowItems categoria={categoria} dataToShow={dataToShow} />
+          <ShowItems categoria={categoria} dataToShow={dataToShow} />
         </div>
       ))}
 

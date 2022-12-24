@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 function LinkMobile({ dish, handlePrice }) {
   return (
     <div>
-      <Link
-        className="hover:text-secondary/80 duration-300"
-        to={`/${dish.id}`}
-      >
+      <Link className="hover:text-secondary/80 duration-300" to={`/${dish.id}`}>
         <div className="w-full rounded-md overflow-hidden relative flex">
           <div className="p-1 sm:p-0 w-2/5 min-w-[100px] h-auto sm:w-auto sm:rounded-none order-2 flex relative">
             <img

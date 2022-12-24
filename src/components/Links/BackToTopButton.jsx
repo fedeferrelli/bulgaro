@@ -1,11 +1,11 @@
-import React from 'react'
-import {Link as LinkScroll} from 'react-scroll'
+import React from "react";
+import { Link as LinkScroll } from "react-scroll";
 import { AiOutlineArrowUp } from "react-icons/ai";
 
 function BackToTopButton() {
-    return (
-        <div>
-            <LinkScroll
+  return (
+    <div>
+      <LinkScroll
         className="rounded-full bg-alt_bg shadow-xl text-center text-text right-3 bottom-3 fixed border border-gray-300/80 flex"
         activeClass="active"
         to="search"
@@ -19,9 +19,8 @@ function BackToTopButton() {
           <AiOutlineArrowUp />{" "}
         </span>
       </LinkScroll>
-            
-        </div>
-    )
+    </div>
+  );
 }
 
-export default BackToTopButton
+export default BackToTopButton;

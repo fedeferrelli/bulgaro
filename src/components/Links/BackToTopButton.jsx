@@ -6,7 +6,7 @@ function BackToTopButton() {
   return (
     <div>
       <LinkScroll
-        className="rounded-full bg-alt_bg shadow-xl text-center text-text right-3 bottom-3 fixed border border-gray-300/80 flex"
+        className="rounded-full bg-alt_bg shadow-xl text-center text-text right-3 bottom-3 fixed border border-alt_bg/80 flex"
         activeClass="active"
         to="search"
         spy={true}
